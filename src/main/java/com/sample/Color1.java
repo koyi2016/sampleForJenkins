@@ -1,5 +1,6 @@
 package com.sample;
 
+
 public class Color1 {
     String getColor(int i) {
         if (i == 1) {
