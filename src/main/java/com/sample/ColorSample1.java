@@ -1,10 +1,8 @@
 package com.sample;
 
+import java.awt.*;
 
-
-
-
-public class Color1 {
+public class ColorSample1 {
     String getColor(int i) {
         if (i == 1) {
             return "赤";
@@ -14,4 +12,6 @@ public class Color1 {
             return "1or2を入力して下さい";
         }
     }
+//    Color1 color1 = new Color1();
+//    String result = color1.getColor(1);
 }

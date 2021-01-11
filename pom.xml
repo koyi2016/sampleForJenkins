@@ -8,10 +8,35 @@
     <artifactId>sampleForJenkins</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>sample</id>-->
+<!--            <name>distributionManagementRepository</name>-->
+<!--            <url>https://github.com/koyi2016/distributionManagementRepository</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>example</groupId>-->
+<!--            <artifactId>jenkinsDemo</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${basedir}/lib/jenkinsDemo-1.0-SNAPSHOT.jar</systemPath>-->
+<!--        </dependency>-->
+
+                <dependency>
+                    <groupId>org.example</groupId>
+                    <artifactId>distributionManagementRepository</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -30,6 +55,49 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <!-- 記事執筆時点での最新はこちら -->
+                    <version>3.0.1</version>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <!-- compileスコープで使用する資材のみコピーする -->
+                    <configuration>
+                        <includeScope>compile</includeScope>
+                    </configuration>
+                </plugin>
+
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-install-plugin</artifactId>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <id>install-external</id>-->
+<!--                            <phase>clean</phase>-->
+<!--                            <configuration>-->
+<!--                                <file>${basedir}/lib/jenkinsDemo-1.0-SNAPSHOT.jar</file>-->
+<!--                                <repositoryLayout>default</repositoryLayout>-->
+<!--                                <groupId>com.sample</groupId>-->
+<!--                                <artifactId>jenkinsDemo</artifactId>-->
+<!--                                <version>1.0-SNAPSHOT</version>-->
+<!--                                <packaging>jar</packaging>-->
+<!--                                <generatePom>true</generatePom>-->
+<!--                            </configuration>-->
+<!--                            <goals>-->
+<!--                                <goal>install-file</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>

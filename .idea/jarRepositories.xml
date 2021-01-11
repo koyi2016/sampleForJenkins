@@ -12,9 +12,19 @@
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="sample" />
+      <option name="name" value="jenkinsDemo" />
+      <option name="url" value="https://github.com/koyi2016/sampleForJenkins" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sample" />
+      <option name="name" value="distributionManagementRepository" />
+      <option name="url" value="https://github.com/koyi2016/distributionManagementRepository" />
     </remote-repository>
   </component>
 </project>
