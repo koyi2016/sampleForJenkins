@@ -12,6 +12,6 @@ public class ColorSample1 {
             return "1or2を入力して下さい";
         }
     }
-//    Color1 color1 = new Color1();
-//    String result = color1.getColor(1);
+    Color1 color1 = new Color1();
+    String result = color1.getColor(1);
 }
