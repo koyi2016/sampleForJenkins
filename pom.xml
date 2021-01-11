@@ -31,7 +31,7 @@
 <!--        </dependency>-->
 
                 <dependency>
-                    <groupId>org.example</groupId>
+                    <groupId>example</groupId>
                     <artifactId>distributionManagementRepository</artifactId>
                     <version>1.0-SNAPSHOT</version>
                 </dependency>
